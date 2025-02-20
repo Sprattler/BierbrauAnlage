@@ -5,8 +5,7 @@
 LiquidCrystal_I2C lcd(0x27, 20, 4); 
 
 void initHMI() {
-
-    //init Display
+    // Display
     Wire.begin();  
     lcd.init();       // LCD initialisieren
     lcd.backlight();  // Hintergrundbeleuchtung aktivieren
@@ -21,11 +20,22 @@ void initHMI() {
     //init Buttons
 }
 
+Bier bierauswaehlen(){
+
+uint8_t auswahl = 0;
+
+//user Input.. 
+
+
+return biersorten[auswahl] ;
+
+}
 
 
 
-void updateDisplay() {
+//wird jede ms aufgerufen 
+void updateDisplay(String &TXT) {
     lcd.setCursor(10, 2);
-    lcd.print(millis() / 1000); // Zeigt die Sekunden seit Start an
+    lcd.print(TXT); 
     
 }

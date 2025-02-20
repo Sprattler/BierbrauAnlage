@@ -4,6 +4,7 @@
 // ****************************************************************
 #include <Arduino.h>
 
+#define Desired_Frequency 100
 /*
 Timer zur PWM Generation 
 Timer 0: Steuert die Pins D4 und D5 auch                    / millis() micros()
