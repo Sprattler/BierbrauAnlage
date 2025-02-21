@@ -40,7 +40,7 @@ if (run_main == true)
     {
     case Start:
 
-      MeinDisplay.text1="Start -> Enter zum vortfahren";
+      MeinDisplay.text1="Start -> Enter";
 
       if (taster_enter.pressed())
         state = Bierauswahl;
