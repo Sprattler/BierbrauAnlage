@@ -4,7 +4,8 @@
 // ****************************************************************
 #include "hmi.h"
 #include "isr.h"
-#include "GPIO.h"
+#include "BierGPIO.h"
+#include "bier.h"
 
 // ****************************************************************
 // ** Defines / Konstanten                                    **
@@ -12,6 +13,8 @@
  enum{
     Start,
     Bierauswahl,
+    checkAuswahl,
+    
 
 } state;
 
@@ -19,7 +22,7 @@
 // ** Typdefinitionen / Strukturdefinitionen                   **
 // ****************************************************************
 bool run_main = false;
-String LCD_TXT;
+
 // ****************************************************************
 // ** Functions                                                **
 // ****************************************************************

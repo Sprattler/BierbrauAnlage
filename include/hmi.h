@@ -5,7 +5,29 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include "Arduino.h"
-#include "biersorten.h"
+
+// ****************************************************************
+// ** typedefs                                                **
+// ****************************************************************
+
+
+
+typedef struct 
+{
+    String text1;
+    uint8_t spalte1;
+
+    String text2;
+    uint8_t spalte2;
+
+    String text3;
+    uint8_t spalte3;
+
+    String text4;
+    uint8_t spalte4;
+
+
+}LiqDisplay;
 
 
 
@@ -15,8 +37,6 @@
 
 
 void initHMI();
-void updateDisplay(String &TXT); // TIMER1 ISR: 1ms
-Bier bierauswaehlen();
 
-
+void updateDisplay(LiqDisplay *anzeige);
 

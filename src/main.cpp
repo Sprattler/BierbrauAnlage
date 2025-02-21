@@ -1,50 +1,65 @@
-
 #include "main.h"
 
+// ****************************************************************
+// ** Defines / Konstanten                                    **
+// ****************************************************************
+Button taster_enter     = Button();  
+Button taster_further   = Button();
+Button taster_back      = Button();
 
-Bier gebraeu;
+
+Bier gebraeu {0};
+LiqDisplay MeinDisplay = {"Hallo",0,"",0}; 
+ int test = 0;
+
+
 
 void setup()
 {
-  initPins();
+
+
+  initGPIO();  // init_Motor();   // init_TempSens(); ...
   initHMI();
   init_ISR();
-  // init_Motor();
-  // init_TempSens();
+
+
+  state = Start;
 }
 
 void loop()
 {
-
-  if (run_main == true)
+if (run_main == true)
   {
- 
 
+
+    run_main = false;
+    taster_enter.update();
 
     // State Machine
     switch (state)
     {
     case Start:
 
-      LCD_TXT = "Drücke Enter zur Bierauswahl";
+      MeinDisplay.text1="Start -> Enter zum vortfahren";
 
-      if (digitalRead(EnterPIN) == HIGH)
+      if (taster_enter.pressed())
         state = Bierauswahl;
-
       break;
 
     case Bierauswahl:
-      /* code */
+          
       break;
+
+    case checkAuswahl:
+      /* code */
+      break;    
 
     default:
       break;
 
-
-
-      updateDisplay(LCD_TXT);
-      run_main = false;
     }
+
+    updateDisplay(&MeinDisplay);
   }
 }
 
@@ -53,9 +68,8 @@ void loop()
 
 
 
-// Jede ms
+// Jede 0,5 ms
 ISR(TIMER2_COMPA_vect)
 {
-  if (run_main == false)
-    run_main = true;
+  run_main = true;
 }
