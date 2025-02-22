@@ -47,7 +47,7 @@ if (run_main == true)
       break;
 
     case Bierauswahl:
-          
+          MeinDisplay.text1="Bier auswaehlen";
       break;
 
     case checkAuswahl:
