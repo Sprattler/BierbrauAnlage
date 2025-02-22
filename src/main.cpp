@@ -3,9 +3,6 @@
 // ****************************************************************
 // ** Defines / Konstanten                                    **
 // ****************************************************************
-Button taster_enter     = Button();  
-Button taster_further   = Button();
-Button taster_back      = Button();
 
 
 Bier gebraeu {0};
@@ -33,7 +30,7 @@ if (run_main == true)
 
 
     run_main = false;
-    taster_enter.update();
+    tasterupdate();
 
     // State Machine
     switch (state)
@@ -47,7 +44,7 @@ if (run_main == true)
       break;
 
     case Bierauswahl:
-          MeinDisplay.text1="Bier auswaehlen";
+          gebraeu = bierauswaehlen(&MeinDisplay);
       break;
 
     case checkAuswahl:

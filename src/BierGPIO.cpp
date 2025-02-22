@@ -1,6 +1,11 @@
 #include "BierGPIO.h"
 
 
+Button taster_enter     = Button();  
+Button taster_rechts   = Button();
+Button taster_links      = Button();
+Button taster_hoch      = Button();
+Button taster_runter      = Button();
 
 
 void initGPIO(){
@@ -11,20 +16,36 @@ void initGPIO(){
     PRESSED_STATE to LOW if the button outputs a LOW when pressed, or to HIGH if the button outputs a HIGH when pressed.          
     */
 
-    taster_enter.attach     ( PIN_ENTER     , PIN_MODE );
-    taster_further.attach   ( PIN_FURTHER , PIN_MODE );
-    taster_back.attach      ( PIN_BACK       , PIN_MODE );
+
+    taster_enter.attach     ( A1       , PIN_MODE );
+    taster_rechts.attach    ( A2         , PIN_MODE );
+    taster_links.attach     ( A3       , PIN_MODE );
+    taster_hoch.attach     ( 0       , PIN_MODE );
+    taster_runter.attach     ( 0       , PIN_MODE );
 
     taster_enter.interval   ( INTERVAL_IN_MS );
-    taster_further.interval  ( INTERVAL_IN_MS );
-    taster_back.interval    ( INTERVAL_IN_MS );
+    taster_rechts.interval  ( INTERVAL_IN_MS );
+    taster_links.interval   ( INTERVAL_IN_MS );
+    taster_hoch.interval   ( INTERVAL_IN_MS );
+    taster_runter.interval   ( INTERVAL_IN_MS );
+    
 
     taster_enter.setPressedState( PRESSED_STATE ); 
-    taster_further.setPressedState( PRESSED_STATE );  
-    taster_back.setPressedState( PRESSED_STATE );  
-
-
-
+    taster_rechts.setPressedState( PRESSED_STATE );  
+    taster_links.setPressedState( PRESSED_STATE );
+    taster_hoch.interval    ( INTERVAL_IN_MS );
+    taster_runter.interval    ( INTERVAL_IN_MS );  
+    
 
 }
 
+void tasterupdate(){
+
+    taster_enter.update();
+    taster_rechts.update();
+    taster_links.update();
+    taster_hoch.update();
+    taster_runter.update();
+
+
+}

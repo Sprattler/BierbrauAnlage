@@ -6,9 +6,7 @@ using namespace Bounce2;
 // ** Defines / Konstanten                                    **
 // ****************************************************************
 
-#define PIN_ENTER       A1 //TODO:
-#define PIN_FURTHER     0
-#define PIN_BACK        0
+
 
 #define PIN_MODE INPUT
 #define INTERVAL_IN_MS  5
@@ -20,10 +18,11 @@ using namespace Bounce2;
 // ** Taster                                                **
 // ****************************************************************
 
-
 extern Button taster_enter;
-extern Button taster_further;
-extern Button taster_back;
+extern Button taster_rechts;
+extern Button taster_links;
+extern Button taster_hoch;
+extern Button taster_runter;
 
 
 
@@ -33,3 +32,4 @@ extern Button taster_back;
 // ****************************************************************
 
 void initGPIO();
+void tasterupdate();
