@@ -10,7 +10,7 @@
 // ** typedefs                                                **
 // ****************************************************************
 
-
+extern LiquidCrystal_I2C lcd; 
 
 typedef struct 
 {

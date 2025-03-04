@@ -18,7 +18,7 @@ void setup()
   initGPIO();  // init_Motor();   // init_TempSens(); ...
   initHMI();
   init_ISR();
-
+  init_PID();
 
   state = Start;
 }
@@ -47,9 +47,18 @@ if (run_main == true)
           gebraeu = bierauswaehlen(&MeinDisplay);
       break;
 
-    case checkAuswahl:
+    case Maischen:
       /* code */
       break;    
+    case Laeutern:
+      /* code */
+      break;
+    case Wuerzekochen:
+      /* code */
+      break;
+    case Kuehlen:
+      /* code */
+      break;         
 
     default:
       break;

@@ -23,7 +23,8 @@ typedef struct  {
 const Bier biersorten[] = {
     {0, "Nix"  , 0,0,0,0},   
     {1, "Helles"  ,60, 80,20,30},        
-    {2, "Dunkles" ,60, 80,},         
+    {2, "Dunkles" ,60, 80,},
+    {2, "Weinhofer Spez." ,60, 80,},          
 };
 
 // ****************************************************************
@@ -31,6 +32,7 @@ const Bier biersorten[] = {
 // ****************************************************************
 
 Bier bierauswaehlen(LiqDisplay *anzeige);
+void tasterAbfrage();
 
 // ****************************************************************
 // ** Private Variablen / Datenfelder                            **

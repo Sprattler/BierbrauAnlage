@@ -13,7 +13,12 @@
  enum{
     Start,
     Bierauswahl,
-    checkAuswahl,
+    Maischen,
+    Laeutern,
+    Wuerzekochen,
+    Kuehlen,
+      
+
     
 
 } state;

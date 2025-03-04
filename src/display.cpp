@@ -3,8 +3,7 @@
 
 
 // LCD mit I2C-Adresse (standardmäßig 0x27 oder 0x3F)
-LiquidCrystal_I2C lcd(0x27, 20, 4); 
-
+LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 // ****************************************************************
 // ** Functions                                                **
@@ -15,7 +14,6 @@ void initHMI() {
     Wire.begin();  
     lcd.init();       // LCD initialisieren
     lcd.backlight();  // Hintergrundbeleuchtung aktivieren
-
     
 }
 
@@ -33,5 +31,8 @@ void updateDisplay(LiqDisplay *anzeige){
 
     lcd.setCursor(anzeige->spalte4, 3);
     lcd.print(anzeige->text4);
+
+
+
 }
 
