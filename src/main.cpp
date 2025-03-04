@@ -15,10 +15,10 @@ void setup()
 {
 
 
-  initGPIO();  // init_Motor();   // init_TempSens(); ...
-  initHMI();
+  initGPIO();  // init_Motor();   // init_TempSens(); ... // Generall purpose input output
+  initHMI();  //init Display
   init_ISR();
-  init_PID();
+ // init_PID();
 
   state = Start;
 }

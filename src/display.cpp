@@ -20,16 +20,16 @@ void initHMI() {
 
 void updateDisplay(LiqDisplay *anzeige){
     
-    lcd.setCursor(anzeige->spalte1, 0);
+    lcd.setCursor(anzeige->Zeile1, 0);
     lcd.print(anzeige->text1); 
 
-    lcd.setCursor(anzeige->spalte2, 1);
+    lcd.setCursor(anzeige->Zeile2, 1);
     lcd.print(anzeige->text2);
 
-    lcd.setCursor(anzeige->spalte3, 2);
+    lcd.setCursor(anzeige->Zeile3, 2);
     lcd.print(anzeige->text3); 
 
-    lcd.setCursor(anzeige->spalte4, 3);
+    lcd.setCursor(anzeige->Zeile4, 3);
     lcd.print(anzeige->text4);
 
 

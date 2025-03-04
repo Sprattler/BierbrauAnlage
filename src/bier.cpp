@@ -3,7 +3,7 @@
 #include "BierGPIO.h"
 
 int8_t seite = 0;
-int8_t spalte = 1;
+int8_t Zeile = 1;
 int8_t auswahl = 0;
 
 Bier bierauswaehlen(LiqDisplay *anzeige)
@@ -11,33 +11,33 @@ Bier bierauswaehlen(LiqDisplay *anzeige)
     char text1Buff[20];
     char buffer[20];
 
-    anzeige->spalte2 =  1;
+    anzeige->Zeile2 =  1;
     anzeige->text2   = biersorten[1+seite*3].name;
-    anzeige->spalte3 =  1;
+    anzeige->Zeile3 =  1;
     anzeige->text3   = biersorten[2+seite*3].name;
-    anzeige->spalte4 =  1;
+    anzeige->Zeile4 =  1;
     anzeige->text4   = biersorten[3+seite*3].name;
 
 
 
     tasterAbfrage();
     seite = 0; //Dummy weil die 2 Seite Fehlt
-    sprintf(buffer, "> %s", biersorten[spalte].name);
-    switch (spalte)
+    sprintf(buffer, "> %s", biersorten[Zeile].name);
+    switch (Zeile)
     {
     case 1:
         //memset(anzeige, 0, sizeof(LiqDisplay)); //Alle Display-zeilen auf 0 Setzen 
-        anzeige->spalte2 =  0;
+        anzeige->Zeile2 =  0;
         anzeige->text2 = buffer;
         break;
     case 2:
         //memset(anzeige, 0, sizeof(LiqDisplay));
-        anzeige->spalte3 =  0;
+        anzeige->Zeile3 =  0;
         anzeige->text3 = buffer;
         break;
     case 3:
         //memset(anzeige, 0, sizeof(LiqDisplay));
-        anzeige->spalte4 =  0;
+        anzeige->Zeile4 =  0;
         anzeige->text4 = buffer;
         break;
 
@@ -52,8 +52,8 @@ Bier bierauswaehlen(LiqDisplay *anzeige)
     anzeige->text1 = text1Buff;
 
     if (seite ==1){ 
-        auswahl = spalte+3; //Auf der der 1 Seite hat das erste Bier(in der ersten Spalte) die Nr.1 auf dem 2 Seite die Nr.4 -> Somit Spalte +3
-    }else auswahl = spalte;
+        auswahl = Zeile+3; //Auf der der 1 Seite hat das erste Bier(in der ersten Spalte) die Nr.1 auf dem 2 Seite die Nr.4 -> Somit Spalte +3
+    }else auswahl = Zeile;
 
     return biersorten[auswahl];
 }
@@ -63,7 +63,7 @@ void tasterAbfrage()
 
     if (taster_enter.pressed()) // Die Auswahl wird beendet und die aktive Spalte und damit gewähle bier wird zurück gegeben 
     {
-        spalte = 0;
+        Zeile = 0;
     }
     
 
@@ -83,15 +83,15 @@ void tasterAbfrage()
 
     if (taster_hoch.pressed())
     {
-        if (spalte > 1)
-            spalte--;
+        if (Zeile > 1)
+            Zeile--;
 
         lcd.clear();  // Dei Anzeige clearen, damit die leeren Textfelder auch wirklich leer angezeigt werden 
     }
     if (taster_rechts.pressed())
     {
-        if (spalte < 3)
-            spalte++;
+        if (Zeile < 3)
+            Zeile++;
 
         lcd.clear();
     }

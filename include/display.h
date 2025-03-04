@@ -15,16 +15,16 @@ extern LiquidCrystal_I2C lcd;
 typedef struct 
 {
     String text1;
-    uint8_t spalte1;
+    uint8_t Zeile1;
 
     String text2;
-    uint8_t spalte2;
+    uint8_t Zeile2;
 
     String text3;
-    uint8_t spalte3;
+    uint8_t Zeile3;
 
     String text4;
-    uint8_t spalte4;
+    uint8_t Zeile4;
 
 
 }LiqDisplay;
