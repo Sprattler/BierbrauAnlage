@@ -6,7 +6,6 @@
 
 
 Bier gebraeu {0};
-LiqDisplay MeinDisplay = {"Hallo",0,"",0}; 
  int test = 0;
 
 
@@ -37,14 +36,14 @@ if (run_main == true)
     {
     case Start:
 
-      MeinDisplay.text1="Start -> Enter";
+      display.text1="Start -> Enter";
 
       if (taster_enter.pressed())
         state = Bierauswahl;
       break;
 
     case Bierauswahl:
-          gebraeu = bierauswaehlen(&MeinDisplay);
+          gebraeu = bierauswaehlen();
       break;
 
     case Maischen:
@@ -65,7 +64,7 @@ if (run_main == true)
 
     }
 
-    updateDisplay(&MeinDisplay);
+    updateDisplay();
   }
 }
 

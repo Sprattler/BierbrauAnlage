@@ -6,17 +6,17 @@ int8_t seite = 0;
 int8_t Zeile = 1;
 int8_t auswahl = 0;
 
-Bier bierauswaehlen(LiqDisplay *anzeige)
+Bier bierauswaehlen()
 {
     char text1Buff[20];
     char buffer[20];
 
-    anzeige->Zeile2 =  1;
-    anzeige->text2   = biersorten[1+seite*3].name;
-    anzeige->Zeile3 =  1;
-    anzeige->text3   = biersorten[2+seite*3].name;
-    anzeige->Zeile4 =  1;
-    anzeige->text4   = biersorten[3+seite*3].name;
+    display.Zeile2 =  1;
+    display.text2   = biersorten[1+seite*3].name;
+    display.Zeile3 =  1;
+    display.text3   = biersorten[2+seite*3].name;
+    display.Zeile4 =  1;
+    display.text4   = biersorten[3+seite*3].name;
 
 
 
@@ -27,18 +27,18 @@ Bier bierauswaehlen(LiqDisplay *anzeige)
     {
     case 1:
         //memset(anzeige, 0, sizeof(LiqDisplay)); //Alle Display-zeilen auf 0 Setzen 
-        anzeige->Zeile2 =  0;
-        anzeige->text2 = buffer;
+        display.Zeile2 =  0;
+        display.text2 = buffer;
         break;
     case 2:
         //memset(anzeige, 0, sizeof(LiqDisplay));
-        anzeige->Zeile3 =  0;
-        anzeige->text3 = buffer;
+        display.Zeile3 =  0;
+        display.text3 = buffer;
         break;
     case 3:
         //memset(anzeige, 0, sizeof(LiqDisplay));
-        anzeige->Zeile4 =  0;
-        anzeige->text4 = buffer;
+        display.Zeile4 =  0;
+        display.text4 = buffer;
         break;
 
     case 0: //Enter
@@ -49,7 +49,7 @@ Bier bierauswaehlen(LiqDisplay *anzeige)
     }
 
     sprintf(text1Buff, "Auswaehlen  [Seite%d]", seite+1);
-    anzeige->text1 = text1Buff;
+    display.text1 = text1Buff;
 
     if (seite ==1){ 
         auswahl = Zeile+3; //Auf der der 1 Seite hat das erste Bier(in der ersten Spalte) die Nr.1 auf dem 2 Seite die Nr.4 -> Somit Spalte +3

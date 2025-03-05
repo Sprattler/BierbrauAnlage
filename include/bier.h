@@ -31,7 +31,7 @@ const Bier biersorten[] = {
 // ** Functions                                                **
 // ****************************************************************
 
-Bier bierauswaehlen(LiqDisplay *anzeige);
+Bier bierauswaehlen();
 void tasterAbfrage();
 
 // ****************************************************************

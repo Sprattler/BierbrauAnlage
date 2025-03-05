@@ -9,9 +9,6 @@
 // ****************************************************************
 // ** typedefs                                                **
 // ****************************************************************
-
-extern LiquidCrystal_I2C lcd; 
-
 typedef struct 
 {
     String text1;
@@ -29,6 +26,8 @@ typedef struct
 
 }LiqDisplay;
 
+extern LiquidCrystal_I2C lcd; 
+extern LiqDisplay display;  //Struct für die Display Strings und Cursor
 
 
 // ****************************************************************
@@ -38,5 +37,5 @@ typedef struct
 
 void initHMI();
 
-void updateDisplay(LiqDisplay *anzeige);
+void updateDisplay();
 

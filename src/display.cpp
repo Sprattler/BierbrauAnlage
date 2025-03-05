@@ -1,9 +1,10 @@
 #include "display.h"
 
 
-
 // LCD mit I2C-Adresse (standardmäßig 0x27 oder 0x3F)
 LiquidCrystal_I2C lcd(0x27, 20, 4);
+
+LiqDisplay display;
 
 // ****************************************************************
 // ** Functions                                                **
@@ -17,20 +18,19 @@ void initHMI() {
     
 }
 
-
-void updateDisplay(LiqDisplay *anzeige){
+void updateDisplay(){
     
-    lcd.setCursor(anzeige->Zeile1, 0);
-    lcd.print(anzeige->text1); 
+    lcd.setCursor(display.Zeile1, 0);
+    lcd.print(display.text1); 
 
-    lcd.setCursor(anzeige->Zeile2, 1);
-    lcd.print(anzeige->text2);
+    lcd.setCursor(display.Zeile2, 1);
+    lcd.print(display.text2);
 
-    lcd.setCursor(anzeige->Zeile3, 2);
-    lcd.print(anzeige->text3); 
+    lcd.setCursor(display.Zeile3, 2);
+    lcd.print(display.text3); 
 
-    lcd.setCursor(anzeige->Zeile4, 3);
-    lcd.print(anzeige->text4);
+    lcd.setCursor(display.Zeile4, 3);
+    lcd.print(display.text4);
 
 
 
